@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://smtpjs.com/v2/smtp.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <header id="header">
+        <button id="menu2-open" class="mobile-menu-icon" onclick="document.querySelector('body').classList.toggle('menu2-open');">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="header-menu">
+            <ul class="header-menu-title">
+                <li><img class="pc" id="header-logo-img" src="img/Newlife-Sakae.png" /></li>
+                <li><img class="sp" id="header-logo-img" src="img/Newlife-Sakaesp.png" /></li>
+            </ul>
+            <ul class="header-menu-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="contact.html">お問い合わせ</a><span><p></p></span></li>
+            </ul>
+        </nav>
+
+    </header>
+    <div class="header-menu-mobile">
+        <ul>
+            <li><a href="index.html">HOME🏡</a></li>
+            <li><a href="contact.html">お問い合わせ☏</a></li>
+        </ul>
+    </div>
+    <h3 class="h3-contact">
+        宮崎市佐土原町アパートニューライフ栄へのご相談等ありましたら、
+        <br>お気軽にご連絡ください。お待ちしております。<br>
+        3日以上返信がない場合は、恐れ入りますが、下記メールアドレスにお問い合わせください。
+        ✉newlifetanaka@gmail.com
+    </h3>
+    <div class="container">
+        <div class="formouter">
+            <form id="form">
+                <h2><span>必須</span>メールアドレス</h2>
+                <input type="text" id="email" onkeyup="addValue();" placeholder="例)XXXXX@XXX.com" size="30" value="">
+                <span id="emailnull"></span>
+                <h2><span>必須</span>件名</h2>
+                <input type="text" id="title" onkeyup="addValue();" placeholder="例)見学" size="30" value=""></br>
+                <span id="titlenull"></span>
+                <h2><span>必須</span>お問合せ内容</h2>
+                <textarea id="message" onkeyup="addValue();" rows="5" placeholder="お問合せ内容を入力、可能であればお名前もお願いいたします。"></textarea>
+                <span id="messagenull"></span>
+                <span>
+                    <input type="button" class="sendbutton" value="送信" onclick="sendparameter();" /><br />
+                </span>
+            </form>
+        </div>
+    </div>
+    <script src="js/contact.js"></script>
+    <script src="js/contact2.js"></script>
+</body>
+</html>
