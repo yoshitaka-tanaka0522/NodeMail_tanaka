@@ -25,6 +25,8 @@ function sendparameter() {
             document.getElementById("title").style.border = 'solid 1px red';
             document.getElementById("titlenull").textContent = "件名の入力をお願いいたします。"
         } else {
-            location.href = domainnone + "https://us-central1-newlifesakaeproject.cloudfunctions.net/sendMail?to=" + tomail + "&title=" + title + "&email=" + email + "&msg=" + message;
+            //location.href = domainnone + "https://us-central1-newlifesakaeproject.cloudfunctions.net/sendMail?to=" + tomail + "&title=" + title + "&email=" + email + "&msg=" + message;
+            //↓ここでfunctionsのフォルダ内のindex.jsにパラメータをpost送信したい
+            //$.post( 'https://httpbin.org/post', 'email=email' ).done(function( data ) {console.log(data);})
         }
 }
