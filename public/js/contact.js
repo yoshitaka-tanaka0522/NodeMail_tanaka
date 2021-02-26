@@ -1,9 +1,8 @@
-﻿function addValue() {
+function addValue() {
     tomail = "newlifetanaka@gmail.com";
     message = document.getElementById("message").value;
     email = document.getElementById("email").value;
     title = document.getElementById("title").value;
-    url = "'https://us-central1-newlifesakaeproject.cloudfunctions.net/sendMail?to=" + tomail + "&msg" + message + "&email" + email + "&title=" + title;
 }
 
 function sendparameter() {
@@ -25,8 +24,20 @@ function sendparameter() {
             document.getElementById("title").style.border = 'solid 1px red';
             document.getElementById("titlenull").textContent = "件名の入力をお願いいたします。"
         } else {
-            //location.href = domainnone + "https://us-central1-newlifesakaeproject.cloudfunctions.net/sendMail?to=" + tomail + "&title=" + title + "&email=" + email + "&msg=" + message;
-            //↓ここでfunctionsのフォルダ内のindex.jsにパラメータをpost送信したい
-            //$.post( 'https://httpbin.org/post', 'email=email' ).done(function( data ) {console.log(data);})
+            const formData = new FormData();
+            formData.append("some_key", "some_value");
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:5000");
+
+            xhr.addEventListener('load', (evt) => {
+                console.log('** xhr: load');
+                let response = JSON.parse(xhr.responseText);
+                console.log(response);
+            });
+            xhr.addEventListener('error', (evt) => {
+                console.log('** xhr: error');
+            });
+        
+            xhr.send(formData);
         }
-}
+}  
